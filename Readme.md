@@ -15,7 +15,7 @@ We build two services:
     - REST API for external clients
     - gRPC API for internal calls (used by Todo Service)
 
-- **Todo Service**  
+- Todo Service 
   - Manages todos (`id`, `title`, `description`, `user_id`)  
   - Exposes:
     - REST API for external clients
