@@ -2,14 +2,14 @@
 # gRPC + FastAPI CRUD Microservices
 
 This project demonstrates a **microservices architecture** using:
-- **FastAPI** (for REST endpoints)
-- **gRPC** (for internal service-to-service communication)
-- **PostgreSQL** (as persistent storage, one DB per service)
-- **Docker Compose** (for local orchestration)
+- FastAPI (for REST endpoints)
+- gRPC (for internal service-to-service communication)
+- PostgreSQL (as persistent storage, one DB per service)
+- Docker Compose (for local orchestration)
 
 We build two services:
 
-- **User Service**  
+- User Service
   - Manages users (`id`, `name`, `email`)  
   - Exposes:
     - REST API for external clients
@@ -21,49 +21,6 @@ We build two services:
     - REST API for external clients
     - gRPC API for internal calls
   - Validates `user_id` by calling **User Service** via gRPC
-
----
-
-## 📂 Project Structure
-
-```
-
-grpc-fastapi-crud/
-│── docker-compose.yml
-│── init.sql
-│── user\_service/
-│   └── app/
-│       ├── main.py
-│       ├── rest\_api.py
-│       ├── grpc\_server.py
-│       ├── crud.py
-│       ├── db.py
-│       ├── models.py
-│       ├── generated/
-│       │   ├── user.proto
-│       │   ├── user\_pb2.py
-│       │   ├── user\_pb2\_grpc.py
-│       └── requirements.txt
-│
-│── todo\_service/
-│   └── app/
-│       ├── main.py
-│       ├── rest\_api.py
-│       ├── grpc\_server.py
-│       ├── crud.py
-│       ├── db.py
-│       ├── models.py
-│       ├── generated/
-│       │   ├── todo.proto
-│       │   ├── todo\_pb2.py
-│       │   ├── todo\_pb2\_grpc.py
-│       │   ├── user\_pb2.py      # copied from user\_service for gRPC stubs
-│       │   ├── user\_pb2\_grpc.py
-│       └── requirements.txt
-
-````
-
----
 
 ## Running the Project
 
