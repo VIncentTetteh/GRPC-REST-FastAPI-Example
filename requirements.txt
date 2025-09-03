@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+grpcio
+grpcio-tools
+asyncpg
+sqlalchemy[asyncio]
+alembic
+pydantic
+grpcio-reflection
